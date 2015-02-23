@@ -30,7 +30,7 @@ recurrence.widget.Grid.prototype = {
         }
         var table = recurrence.widget.e(
             'table', {
-                'class': 'grid', 'cellpadding': 0,
+                'class': 'table table-bordered grid', 'cellpadding': 0,
                 'cellspacing': 0, 'border': 0},
             [tbody]);
 
@@ -307,7 +307,7 @@ recurrence.widget.DateSelector.prototype = {
             var date_value = '';
         var date_field = recurrence.widget.e(
             'input', {
-                'class': 'date-field', 'size': 10,
+                'class': 'form-control date-field', 'size': 10,
                 'value': date_value,
                 'onchange': function() {dateselector.set_date(this.value);}});
         var calendar_button = recurrence.widget.e(
@@ -740,7 +740,7 @@ recurrence.widget.RuleForm.prototype = {
         // mode
 
         var mode_checkbox = recurrence.widget.e(
-            'input', {'class': 'checkbox', 'type': 'checkbox', 'name': 'mode'});
+            'input', {'class': 'checkbox form-control', 'type': 'checkbox', 'name': 'mode'});
         var mode_label = recurrence.widget.e(
             'span', {'class': 'recurrence-label'},
             recurrence.display.labels.exclude_occurrences);
@@ -765,7 +765,7 @@ recurrence.widget.RuleForm.prototype = {
                 return option;
             });
         var freq_select = recurrence.widget.e(
-            'select', {'name': 'freq'}, freq_options);
+            'select', {'class':'form-control','name': 'freq'}, freq_options);
         var freq_label = recurrence.widget.e(
             'span', {'class': 'recurrence-label'},
             recurrence.display.labels.frequency + ':');
@@ -777,6 +777,7 @@ recurrence.widget.RuleForm.prototype = {
 
         var interval_field = recurrence.widget.e(
             'input', {
+            'class' : 'form-control',
             'name': 'interval', 'size': 1, 'value': this.rule.interval});
         var interval_label1 = recurrence.widget.e(
             'span', {'class': 'recurrence-label'},
@@ -795,7 +796,7 @@ recurrence.widget.RuleForm.prototype = {
         else
             until_value = '';
         var until_radio = recurrence.widget.e(
-            'input', {'class': 'radio', 'type': 'radio',
+            'input', {'class': 'radio form-control', 'type': 'radio',
                       'name': 'until_count', 'value': 'until'});
         var until_date_selector = new recurrence.widget.DateSelector(
             this.rule.until, {
@@ -817,10 +818,10 @@ recurrence.widget.RuleForm.prototype = {
             count_value = 1;
         var count_radio = recurrence.widget.e(
             'input', {
-                'class': 'radio', 'type': 'radio',
+                'class': 'radio form-control', 'type': 'radio',
                 'name': 'until_count', 'value': 'count'});
         var count_field = recurrence.widget.e(
-            'input', {'name': 'count', 'size': 1, 'value': count_value});
+            'input', {'class':'form-control','name': 'count', 'size': 1, 'value': count_value});
         if (this.rule.count && this.rule.count < 2)
             var token = recurrence.string.capitalize(
                 recurrence.display.labels.count);
@@ -842,7 +843,7 @@ recurrence.widget.RuleForm.prototype = {
             [until_container, count_container]);
         var limit_checkbox = recurrence.widget.e(
             'input', {
-                'class': 'checkbox', 'type': 'checkbox',
+                'class': 'checkbox form-control', 'type': 'checkbox',
                 'name': 'limit'});
         var limit_label = recurrence.widget.e(
             'span', {'class': 'recurrence-label'},
@@ -1135,7 +1136,7 @@ recurrence.widget.RuleYearlyForm.prototype = {
 
         var byday_checkbox = recurrence.widget.e(
             'input', {
-                'class': 'checkbox', 'type': 'checkbox',
+                'class': 'form-control checkbox', 'type': 'checkbox',
                 'name': 'byday'});
         var byday_label = recurrence.widget.e(
             'span', {'class': 'recurrence-label'},
@@ -1156,7 +1157,7 @@ recurrence.widget.RuleYearlyForm.prototype = {
                 return option;
             });
         var position_select = recurrence.widget.e(
-            'select', {'name': 'position'}, position_options);
+            'select', {'class':'form-control', 'name': 'position'}, position_options);
         var weekday_options = recurrence.array.foreach(
             recurrence.display.weekdays, function(weekday, i) {
                 var option = recurrence.widget.e(
@@ -1164,7 +1165,7 @@ recurrence.widget.RuleYearlyForm.prototype = {
                 return option;
             });
         var weekday_select = recurrence.widget.e(
-            'select', {'name': 'weekday'}, weekday_options);
+            'select', {'class':'form-control','name': 'weekday'}, weekday_options);
         var weekday_position_container = recurrence.widget.e(
             'div', {'class': 'section'}, [position_select, weekday_select]);
 
@@ -1304,7 +1305,7 @@ recurrence.widget.RuleMonthlyForm.prototype = {
         monthday_grid_container.appendChild(monthday_grid.elements.root);
         var monthday_radio = recurrence.widget.e(
             'input', {
-                'class': 'radio', 'type': 'radio',
+                'class': 'radio form-control', 'type': 'radio',
                 'name': 'monthly', 'value': 'monthday'});
         var monthday_label = recurrence.widget.e(
             'span', {'class': 'recurrence-label'},
@@ -1325,7 +1326,7 @@ recurrence.widget.RuleMonthlyForm.prototype = {
                 return option;
             });
         var position_select = recurrence.widget.e(
-            'select', {'name': 'position'}, position_options);
+            'select', {'class':'form-control','name': 'position'}, position_options);
 
         var weekday_options = recurrence.array.foreach(
             recurrence.display.weekdays, function(weekday, i) {
@@ -1334,12 +1335,12 @@ recurrence.widget.RuleMonthlyForm.prototype = {
                 return option;
             });
         var weekday_select = recurrence.widget.e(
-            'select', {'name': 'weekday'}, weekday_options);
+            'select', {'class':'form-control','name': 'weekday'}, weekday_options);
         var weekday_position_container = recurrence.widget.e(
             'div', {'class': 'section'}, [position_select, weekday_select]);
         var weekday_radio = recurrence.widget.e(
             'input', {
-                'class': 'radio', 'type': 'radio',
+                'class': 'form-control radio', 'type': 'radio',
                 'name': 'monthly', 'value': 'weekday'});
         var weekday_label = recurrence.widget.e(
             'span', {'class': 'recurrence-label'},
@@ -1569,7 +1570,7 @@ recurrence.widget.DateForm.prototype = {
 
         var mode_checkbox = recurrence.widget.e(
             'input', {
-                'class': 'checkbox', 'type': 'checkbox', 'name': 'mode',
+                'class': 'form-control checkbox', 'type': 'checkbox', 'name': 'mode',
                 'onclick': function() {
                     if (this.checked)
                         form.set_mode(recurrence.widget.EXCLUSION);
