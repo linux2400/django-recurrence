@@ -2,19 +2,21 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Romain <linux2400@yahoo.fr>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-26 15:26+0000\n"
-"PO-Revision-Date: 2014-11-26 16:28+0100\n"
-"Last-Translator: Olivier Le Brouster <olivier.le-brouster@webu.coop>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2015-02-24 02:11+0100\n"
+"Last-Translator: Romain <linux2400@yahoo.fr>\n"
+"Language-Team: français <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: static/recurrence/js/recurrence-widget.js:1610
 msgctxt "date"
@@ -35,7 +37,7 @@ msgstr "Fréquence"
 
 #: static/recurrence/js/recurrence-widget.js:1780
 msgid "On the"
-msgstr "Pour le"
+msgstr "Le"
 
 #: static/recurrence/js/recurrence-widget.js:1781
 msgid "Each"
@@ -103,7 +105,7 @@ msgstr "midi"
 
 #: static/recurrence/js/recurrence.js:1008
 msgid "on the %(items)s"
-msgstr "pour le %(items)s"
+msgstr "le %(items)s"
 
 #: static/recurrence/js/recurrence.js:1009
 msgid "every %(number)s %(freq)s"
@@ -183,19 +185,19 @@ msgstr "secondes"
 
 #: static/recurrence/js/recurrence.js:1025
 msgid "annually"
-msgstr "annuel"
+msgstr "chaque année"
 
 #: static/recurrence/js/recurrence.js:1025
 msgid "monthly"
-msgstr "mensuel"
+msgstr "chaque mois"
 
 #: static/recurrence/js/recurrence.js:1025
 msgid "weekly"
-msgstr "hebdomadaire"
+msgstr "chaque semaine"
 
 #: static/recurrence/js/recurrence.js:1025
 msgid "daily"
-msgstr "quotidien"
+msgstr "chaque jour"
 
 #: static/recurrence/js/recurrence.js:1026
 msgid "hourly"

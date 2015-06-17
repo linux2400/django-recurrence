@@ -1,6 +1,11 @@
 if (!recurrence)
     var recurrence = {};
 
+recurrence.listener = null;
+recurrence.set_listener = function(l) {
+	recurrence.listener = l; 	
+}
+
 recurrence.widget = {};
 
 
@@ -1078,11 +1083,14 @@ recurrence.widget.RuleForm.prototype = {
         }
         this.update();
     },
-
+    
     update: function() {
         this.panel.set_label(this.get_display_text());
         this.rule.update(this.freq_rules[this.selected_freq]);
         this.panel.widget.update();
+        /* call external hook */
+        if(recurrence.listener)
+        	recurrence.listener();
     },
 
     remove: function() {
@@ -1094,6 +1102,9 @@ recurrence.widget.RuleForm.prototype = {
         else
             recurrence.array.remove(this.panel.widget.data.exrules, this.rule);
         this.panel.widget.update();
+        /* call external hook */
+        if(recurrence.listener)
+        	recurrence.listener();
     }
 };
 
@@ -1643,6 +1654,9 @@ recurrence.widget.DateForm.prototype = {
     update: function() {
         this.panel.set_label(this.get_display_text());
         this.panel.widget.update();
+        /* call external hook */
+        if(recurrence.listener)
+        	recurrence.listener();
     },
 
     remove: function() {
@@ -1654,6 +1668,9 @@ recurrence.widget.DateForm.prototype = {
         else
             recurrence.array.remove(this.panel.widget.data.exdates, this.date);
         this.panel.widget.update();
+        /* call external hook */
+        if(recurrence.listener)
+        	recurrence.listener();
     }
 };
 

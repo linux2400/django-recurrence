@@ -110,7 +110,7 @@ recurrence.Rule.prototype = {
                         'number': this.interval,
                         'freq': recurrence.display.timeintervals_plural[this.freq]
                     }, true));
-        else
+        else if (this.freq == recurrence.MONTHLY)
             parts.push(recurrence.display.frequencies[this.freq]);
 
         if (this.freq == recurrence.YEARLY) {
